@@ -34,7 +34,7 @@
 	
 <?php }else{ 
 		$conn = connect_sql();
-		$sql = "SELECT * FROM leaderboard ORDER BY score DESC";
+		$sql = "SELECT * FROM leaderboard ORDER BY score DESC LIMIT 10";
 		$hasil = $conn->query($sql);
 	?>
 	<h3>Hallo <?= $_COOKIE['username']; ?>... Sayang permainan sudah selesai. Semoga kali lain bisa lebih baik.</h3>
@@ -42,6 +42,7 @@
 	<br/>
 	<a href="../index.php">[Main Lagi]</a> 
 	<br/><br/>
+		<h3>HALL OF FAME</h3>
 		<?php if($hasil->num_rows > 0){
 			$no =0; ?>
 			<table>
